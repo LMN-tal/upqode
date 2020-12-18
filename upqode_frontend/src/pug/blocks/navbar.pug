@@ -1,0 +1,22 @@
+nav.navbar.fixed-top
+  .container
+    .navbar__brand
+      img.brand__logo(src='img/logo.svg')
+      |  
+      span.brand_name UpQode
+    // Collapse
+    button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+      span.navbar-toggler-icon
+    #navbarSupportedContent.collapse.navbar-collapse
+      ul.navbar-nav
+        - 
+          let menu = [
+            {link:"#home",text: "Home"},
+            {link:"#services",text: "Services"},
+            {link:"#team",text: "Team"},
+            {link:"#contact-us",text: "Contact Us"}
+          ]        
+        each item,i in menu
+          - var liClass = (i === 0 ? 'nav-item active' : 'nav-item')
+            li(class=liClass)
+              a.nav-link(href=item.link) #{item.text}

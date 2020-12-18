@@ -1,0 +1,58 @@
+- 
+  let offices = [
+    {
+      city:"Loas Angeles, USA",
+      address: "2005 Stokes Isle Apt. 896, Venaville, New York 10010",
+      schedule: [{days:"Mon - Sat",time:"11:00-19:00"},{days:"Sun",time:"11:00-16:00"}],
+      tel: ["(0043) 568 456 902","(0043) 568 456 902"],
+      email: ["hello@pad.architecture","support@pad.architecture"]
+    },
+    {
+      city:"New York, USA",
+      address: "2005 Stokes Isle Apt. 896, Venaville, New York 10010",
+      schedule: [{days:"Mon - Sat",time:"11:00-19:00"},{days:"Sun",time:"11:00-16:00"}],
+      tel: ["(0043) 568 456 902","(0043) 568 456 902"],
+      email: ["hello@pad.architecture","support@pad.architecture"]
+    },
+    {
+      city:"Boston, USA",
+      address: "2005 Stokes Isle Apt. 896, Venaville, New York 10010",
+      schedule: [{days:"Mon - Sat",time:"11:00-19:00"},{days:"Sun",time:"11:00-16:00"}],
+      tel: ["(0043) 568 456 902","(0043) 568 456 902"],
+      email: ["hello@pad.architecture","support@pad.architecture"]
+    },
+    {
+      city:"Detroit, USA",
+      address: "2005 Stokes Isle Apt. 896, Venaville, New York 10010",
+      schedule: [{days:"Mon - Sat",time:"11:00-19:00"},{days:"Sun",time:"11:00-16:00"}],
+      tel: ["(0043) 568 456 902","(0043) 568 456 902"],
+      email: ["hello@pad.architecture","support@pad.architecture"]
+    }
+  ]
+
+
+h2 Meet Us in Your City
+.active 2005 Stokes Isle Apt. 896, Venaville, New York 10010
+
+.offices
+  each office in offices
+    .office
+      h2.office__city #{office.city}
+      .office__address #{office.address}
+      .office__schedule
+        h2.header.header--schedule Work Schedule
+        each elem in office.schedule
+          .schedule__item
+            span.schedule__days #{elem.days}: 
+            span.schedule__time #{elem.time}
+      .office__tel
+        h2.header.header--tel Head Office
+        each tel in office.tel
+          .tel__item
+            .office__tel #{tel}
+      .office__email
+        h2.header.header--email Head Office
+        each email in office.email
+          .email__item
+            .office__email #{email}
+

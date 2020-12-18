@@ -1,0 +1,65 @@
+- 
+  let slides = [
+    {
+      header:"Mileage made simple",
+      text: "Motivation And Your Personal Vision An Unbeatable Force",
+      linkText: "Start free trial",
+      linkUrl: "#",
+      videoUrl: "https://www.youtube.com/embed/7TKfYo3syT4?playlist=7TKfYo3syT4"
+    },
+    {
+      header:"Lorem, ipsum dolor",
+      text: "Lorem ipsum dolor sit amet consectetur adipisicing.",
+      linkText: "Start free trial",
+      linkUrl: "#",
+      videoUrl: "https://www.youtube.com/watch?v=W86cTIoMv2U"
+    },
+    {
+      header:"Lorem ipsum dolor sit.",
+      text: "Lorem ipsum dolor sit amet consectetur.",
+      linkText: "Start free trial",
+      linkUrl: "#",
+      videoUrl: "https://www.youtube.com/watch?v=hGIW2fDb0jg"
+    }
+  ]
+- let videoParams='&controls=0&showinfo=0&rel=0&autoplay=1&loop=1&mute=1'
+// Carousel Wrapper
+#carousel-example-1z.carousel.slide.carousel-fade(data-ride='carousel')
+  // Indicators
+  ol.carousel-indicators
+    li.active(data-target='#carousel-example-1z' data-slide-to='0')
+    li(data-target='#carousel-example-1z' data-slide-to='1')
+    li(data-target='#carousel-example-1z' data-slide-to='2')
+  // /.Indicators
+  // Slides
+
+
+  .carousel-inner(role='listbox')
+    each slide,i in slides
+      // slide
+      - var divClass = (i === 0 ? 'carousel-item active' : 'carousel-item')
+      div(class=divClass)
+        .view
+          // Video source
+          iframe.videoContainer__video(width='100%',height='100%',src=slide.videoUrl+videoParams,frameborder='0')
+          // Mask & flexbox options
+          .mask.rgba-black-light.d-flex.justify-content-center.align-items-center
+            // Content
+            .slide-content
+              h1 #{slide.header}
+              p #{slide.text}
+              a.btn(target='_blank' href=slide.linkUrl)
+                | #{slide.linkText}
+            // / Content
+          // / Mask & flexbox options
+      // / slide
+  // /.Slides
+  // Controls
+  a.carousel-control-prev(href='#carousel-example-1z' role='button' data-slide='prev')
+    span.carousel-control-prev-icon(aria-hidden='true')
+    span.sr-only Previous
+  a.carousel-control-next(href='#carousel-example-1z' role='button' data-slide='next')
+    span.carousel-control-next-icon(aria-hidden='true')
+    span.sr-only Next
+  // /.Controls
+// /.Carousel Wrapper

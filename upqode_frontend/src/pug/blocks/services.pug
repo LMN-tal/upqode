@@ -1,0 +1,26 @@
+-
+  let services = [
+    {
+      name: "Track every trip you make",
+      description: "Every one of your trips is captured immediately and is never forgotten.",
+      features: ["No signal dropout","No missed trips"]
+    },
+    {
+      name: "Classify with a single swipe",
+      description: "Swipe right for business. Swipe left for personal. It’s as easy as that.",
+      features: ["Review trips on the go","Classify journeys in seconds"]
+    },
+    {
+      name: "Claim your money back with ease",
+      description: "Claiming mileage has never been so easy, with all calculations done for you.",
+      features: ["100% HMRC compliance","All logs in one place"]
+    }
+  ]
+each service in services
+  .service
+    h2.service__name #{service.name}
+    p.service__description #{service.description}
+    ul.service__features
+    each feature in service.features
+      li.service__feature #{feature}
+    a.button.button--more(href="") learn more

@@ -1,0 +1,21 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    title First practical task
+    link(rel="stylesheet" type='text/css' href="css/main.css")
+  body  
+    header#home
+      include ../blocks/navbar.pug
+      include ../blocks/banner.pug
+    main
+      .container
+        section#services
+          include ../blocks/services.pug
+        section#team
+          include ../blocks/team.pug
+        section#contact-us
+          include ../blocks/contacts.pug
+    footer.page__footer
+      .container
+        include ../blocks/footer.pug
