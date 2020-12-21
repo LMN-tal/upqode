@@ -11,6 +11,8 @@ html(lang="en")
     main
       .container
         section#services
+          .svg-bg
+           include ../blocks/svg-bg.pug
           include ../blocks/services.pug
         section#team
           include ../blocks/team.pug
@@ -19,3 +21,23 @@ html(lang="en")
     footer.page__footer
       .container
         include ../blocks/footer.pug
+    // SCRIPTS
+    // JQuery
+    script(type='text/javascript' src='js/jquery-3.4.1.min.js')
+    // Bootstrap tooltips
+    script(type='text/javascript' src='js/popper.min.js')
+    // Bootstrap core JavaScript
+    script(type='text/javascript' src='js/bootstrap.min.js')
+    // MDB core JavaScript
+    script(type='text/javascript' src='js/mdb.min.js')
+    // TweenMax
+    script(type='text/javascript' src='js/TweenMax.min.js')
+    script(type='text/javascript' src='js/DrawSVGPlugin.min.js')
+    script(type='text/javascript' src='js/MorphSVGPlugin.min.js')
+    // custon scripts
+    script(type='text/javascript' src='js/main.js')
+    // Initializations 
+    script(type='text/javascript').
+      // Animations initialization
+      new WOW().init();
+    

@@ -1,7 +1,7 @@
 - 
   let offices = [
     {
-      city:"Loas Angeles, USA",
+      city:"Los Angeles, USA",
       address: "2005 Stokes Isle Apt. 896, Venaville, New York 10010",
       schedule: [{days:"Mon - Sat",time:"11:00-19:00"},{days:"Sun",time:"11:00-16:00"}],
       tel: ["(0043) 568 456 902","(0043) 568 456 902"],
@@ -30,29 +30,32 @@
     }
   ]
 
-
-h2 Meet Us in Your City
-.active 2005 Stokes Isle Apt. 896, Venaville, New York 10010
-
-.offices
-  each office in offices
-    .office
-      h2.office__city #{office.city}
-      .office__address #{office.address}
-      .office__schedule
-        h2.header.header--schedule Work Schedule
-        each elem in office.schedule
-          .schedule__item
-            span.schedule__days #{elem.days}: 
-            span.schedule__time #{elem.time}
-      .office__tel
-        h2.header.header--tel Head Office
-        each tel in office.tel
-          .tel__item
-            .office__tel #{tel}
-      .office__email
-        h2.header.header--email Head Office
-        each email in office.email
-          .email__item
-            .office__email #{email}
+.content
+  h2 Meet Us
+    br 
+    | in Your City
+  .selected 2005 Stokes Isle Apt. 896, Venaville, New York 10010
+  .offices  
+    each office,i in offices
+      - var divClass = (i === 0 ? 'office active' : 'office')
+      div(class=divClass)      
+        h3.office__city #{office.city}
+        .office__address #{office.address}
+        .office__schedule
+          h3.header.header--schedule Work Schedule
+          each elem in office.schedule
+            .schedule__item
+              span.schedule__days #{elem.days}: 
+              span.schedule__time #{elem.time}
+        .office__tel
+          h3.header.header--tel Head Office
+          each tel in office.tel
+            .tel__item
+              .office__tel #{tel}
+        .office__email
+          h3.header.header--email Head Office
+          each email in office.email
+            .email__item
+              .office__email #{email}
+#googlemap
 

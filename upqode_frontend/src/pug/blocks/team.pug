@@ -1,20 +1,70 @@
-h2 Julia Harrington
-.employee__position Art Director
-.employee_description
-  | Have you ever had a problem with a burned light? Thanks to the effort of Thomas Edison we no longer need to
-  | invent a light bulb. We just go to the store or our cupboard and pull one out and screw it in. When we are
-  | feeling so low and deep in the pits, this is when we need light to see our way through.
-ul.employee__social
-  li.employee__social-link Facebook
-  li.employee__social-link LinkedIn
-  li.employee__social-link Twitter
-h2 Kyle Walker
-.employee__position Designer
-.employee_description
-  | Have you ever had a problem with a burned light? Thanks to the effort of Thomas Edison we no longer need to
-  | invent a light bulb. We just go to the store or our cupboard and pull one out and screw it in. When we are
-  | feeling so low and deep in the pits, this is when we need light to see our way through.
-ul.employee__social
-  li.employee__social-link Facebook
-  li.employee__social-link LinkedIn
-  li.employee__social-link Twitter
+-
+  let employees = [
+    {
+      name: "Julia Harrington",
+      position: "Art director",
+      description: `Have you ever had a problem with a burned light? Thanks to the effort of Thomas Edison we no
+        longer need to invent a light bulb. We just go to the store or our cupboard and pull one out and screw it
+        in. When we are feeling so low and deep in the pits, this is when we need light to see our way through`,
+      social: [
+        {name:"Facebook",url:"#"},
+        {name:"LinkedIn",url:"#"},
+        {name:"Twitter",url:"#"},        
+      ]
+    },
+    {
+      name: "Kyle Walker",
+      position: "Designer",
+      description: `Have you ever had a problem with a burned light? Thanks to the effort of Thomas Edison we no
+        longer need to invent a light bulb. We just go to the store or our cupboard and pull one out and screw it
+        in. When we are feeling so low and deep in the pits, this is when we need light to see our way through`,
+      social: [
+        {name:"Facebook",url:"#"},
+        {name:"LinkedIn",url:"#"},
+        {name:"Twitter",url:"#"},        
+      ]
+    },
+    {
+      name: "Harry Kane",
+      position: "Office manager",
+      description: `Have you ever had a problem with a burned light? Thanks to the effort of Thomas Edison we no
+        longer need to invent a light bulb. We just go to the store or our cupboard and pull one out and screw it
+        in. When we are feeling so low and deep in the pits, this is when we need light to see our way through`,
+      social: [
+        {name:"Facebook",url:"#"},
+        {name:"LinkedIn",url:"#"},
+        {name:"Twitter",url:"#"},        
+      ]
+    },
+    {
+      name: "Markus Rashford",
+      position: "Art director",
+      description: `Have you ever had a problem with a burned light? Thanks to the effort of Thomas Edison we no
+        longer need to invent a light bulb. We just go to the store or our cupboard and pull one out and screw it in.`,
+      social: [
+        {name:"Facebook",url:"#"},
+        {name:"LinkedIn",url:"#"},
+        {name:"Twitter",url:"#"},        
+      ]
+    },
+    {
+      name: "Fernando Torres",
+      position: "Art director",
+      description: `Have you ever had a problem with a burned light? Thanks to the effort of Thomas Edison we no
+        longer need to invent a light bulb. We just go to the store or our cupboard and pull one out and screw it
+        in. When we are feeling so low and deep in the pits, this is when we need light to see our way through`,
+      social: [
+        {name:"Facebook",url:"#"},
+        {name:"LinkedIn",url:"#"},
+        {name:"Twitter",url:"#"},        
+      ]
+    }
+  ]
+each employee in employees
+  h2 #{employee.name}
+  .employee__position #{employee.position}
+  .employee_description #{employee.description}
+  ul.employee__social
+    each link in employee.social
+      li.employee__social-link 
+        a(href=link.url) #{link.name}

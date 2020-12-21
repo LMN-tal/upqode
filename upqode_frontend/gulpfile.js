@@ -32,12 +32,27 @@ gulp.task('sass', function () {
     }));
 });
 
+gulp.task('copyfonts', function() {
+  return gulp.src('src/static/fonts/**/*.{ttf,woff,eot,svg,otf}')
+    .pipe(gulp.dest('build/fonts'));
+});
+
+gulp.task('copyjs', function() {
+  return gulp.src('src/static/js/**/*.js')
+    .pipe(gulp.dest('build/js'));
+});
+
+gulp.task('copyimages', function() {
+  return gulp.src('src/static/img/**/*.{jpg,png,svg}')
+    .pipe(gulp.dest('build/img'));
+});
+
 gulp.task('watch', function () {
     gulp.watch('src/pug/**/*.pug',gulp.series('pug'));
     gulp.watch('src/static/sass/**/*.scss',gulp.series('sass'));
 })
 
 gulp.task('default', gulp.series(
-  gulp.parallel('pug','sass'),
+  gulp.parallel('pug','sass','copyfonts','copyjs','copyimages'),
   gulp.parallel('watch','serve')
-  ));
+));

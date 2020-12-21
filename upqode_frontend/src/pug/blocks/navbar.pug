@@ -1,4 +1,11 @@
-nav.navbar.fixed-top
+- 
+  let menu = [
+    {link:"#home",text: "Home"},
+    {link:"#services",text: "Services"},
+    {link:"#team",text: "Team"},
+    {link:"#contact-us",text: "Contact Us"}
+  ]        
+nav.navbar.fixed-top.scrolling-navbar.navbar-nav.mr-auto.smooth-scroll
   .container
     .navbar__brand
       img.brand__logo(src='img/logo.svg')
@@ -8,14 +15,7 @@ nav.navbar.fixed-top
     button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
       span.navbar-toggler-icon
     #navbarSupportedContent.collapse.navbar-collapse
-      ul.navbar-nav
-        - 
-          let menu = [
-            {link:"#home",text: "Home"},
-            {link:"#services",text: "Services"},
-            {link:"#team",text: "Team"},
-            {link:"#contact-us",text: "Contact Us"}
-          ]        
+      ul#topmenu.navbar-nav
         each item,i in menu
           - var liClass = (i === 0 ? 'nav-item active' : 'nav-item')
             li(class=liClass)
