@@ -1,35 +1,3 @@
-- 
-  let offices = [
-    {
-      city:"Los Angeles, USA",
-      address: "2005 Stokes Isle Apt. 896, Venaville, New York 10010",
-      schedule: [{days:"Mon - Sat",time:"11:00-19:00"},{days:"Sun",time:"11:00-16:00"}],
-      tel: ["(0043) 568 456 902","(0043) 568 456 902"],
-      email: ["hello@pad.architecture","support@pad.architecture"]
-    },
-    {
-      city:"New York, USA",
-      address: "2005 Stokes Isle Apt. 896, Venaville, New York 10010",
-      schedule: [{days:"Mon - Sat",time:"11:00-19:00"},{days:"Sun",time:"11:00-16:00"}],
-      tel: ["(0043) 568 456 902","(0043) 568 456 902"],
-      email: ["hello@pad.architecture","support@pad.architecture"]
-    },
-    {
-      city:"Boston, USA",
-      address: "2005 Stokes Isle Apt. 896, Venaville, New York 10010",
-      schedule: [{days:"Mon - Sat",time:"11:00-19:00"},{days:"Sun",time:"11:00-16:00"}],
-      tel: ["(0043) 568 456 902","(0043) 568 456 902"],
-      email: ["hello@pad.architecture","support@pad.architecture"]
-    },
-    {
-      city:"Detroit, USA",
-      address: "2005 Stokes Isle Apt. 896, Venaville, New York 10010",
-      schedule: [{days:"Mon - Sat",time:"11:00-19:00"},{days:"Sun",time:"11:00-16:00"}],
-      tel: ["(0043) 568 456 902","(0043) 568 456 902"],
-      email: ["hello@pad.architecture","support@pad.architecture"]
-    }
-  ]
-
 .content
   h2 Meet Us
     br 
@@ -57,5 +25,6 @@
           each email in office.email
             .email__item
               .office__email #{email}
-#googlemap
+#map
 
+  

@@ -1,70 +1,34 @@
--
-  let employees = [
-    {
-      name: "Julia Harrington",
-      position: "Art director",
-      description: `Have you ever had a problem with a burned light? Thanks to the effort of Thomas Edison we no
-        longer need to invent a light bulb. We just go to the store or our cupboard and pull one out and screw it
-        in. When we are feeling so low and deep in the pits, this is when we need light to see our way through`,
-      social: [
-        {name:"Facebook",url:"#"},
-        {name:"LinkedIn",url:"#"},
-        {name:"Twitter",url:"#"},        
-      ]
-    },
-    {
-      name: "Kyle Walker",
-      position: "Designer",
-      description: `Have you ever had a problem with a burned light? Thanks to the effort of Thomas Edison we no
-        longer need to invent a light bulb. We just go to the store or our cupboard and pull one out and screw it
-        in. When we are feeling so low and deep in the pits, this is when we need light to see our way through`,
-      social: [
-        {name:"Facebook",url:"#"},
-        {name:"LinkedIn",url:"#"},
-        {name:"Twitter",url:"#"},        
-      ]
-    },
-    {
-      name: "Harry Kane",
-      position: "Office manager",
-      description: `Have you ever had a problem with a burned light? Thanks to the effort of Thomas Edison we no
-        longer need to invent a light bulb. We just go to the store or our cupboard and pull one out and screw it
-        in. When we are feeling so low and deep in the pits, this is when we need light to see our way through`,
-      social: [
-        {name:"Facebook",url:"#"},
-        {name:"LinkedIn",url:"#"},
-        {name:"Twitter",url:"#"},        
-      ]
-    },
-    {
-      name: "Markus Rashford",
-      position: "Art director",
-      description: `Have you ever had a problem with a burned light? Thanks to the effort of Thomas Edison we no
-        longer need to invent a light bulb. We just go to the store or our cupboard and pull one out and screw it in.`,
-      social: [
-        {name:"Facebook",url:"#"},
-        {name:"LinkedIn",url:"#"},
-        {name:"Twitter",url:"#"},        
-      ]
-    },
-    {
-      name: "Fernando Torres",
-      position: "Art director",
-      description: `Have you ever had a problem with a burned light? Thanks to the effort of Thomas Edison we no
-        longer need to invent a light bulb. We just go to the store or our cupboard and pull one out and screw it
-        in. When we are feeling so low and deep in the pits, this is when we need light to see our way through`,
-      social: [
-        {name:"Facebook",url:"#"},
-        {name:"LinkedIn",url:"#"},
-        {name:"Twitter",url:"#"},        
-      ]
-    }
-  ]
 each employee in employees
-  h2 #{employee.name}
-  .employee__position #{employee.position}
-  .employee_description #{employee.description}
-  ul.employee__social
-    each link in employee.social
-      li.employee__social-link 
-        a(href=link.url) #{link.name}
+  .employee
+    img.employee__photo(src=employee.photoUrl, alt=employee.name)
+    h2.employee__name #{employee.name}
+    .employee__position #{employee.position}
+    .employee__description #{employee.description}
+    ul.employee__social
+      each link in employee.social
+        li.employee__social-link 
+          a(href=link.url) #{link.name}
+#team-carousel
+  .team-carousel__info-wrapper
+    .team-carousel__info
+        h2.employee__name #{employees[0].name}
+        .employee__position #{employees[0].position}
+        .employee__description #{employees[0].description}
+        ul.employee__social
+          each link in employees[0].social
+            li.employee__social-link 
+              a(href=link.url) #{link.name}
+    .team-carousel__navigation
+      .next
+        .thumb
+          img(src=employees[1].photoUrl, width="90", height="120")
+        .text
+          | NEXT →
+          .name #{employees[1].name}
+      .prev
+        .thumb
+        .text
+          | ← PREV
+          .name
+  .team-carousel__photos
+     img.employee__photo(src=employees[0].photoUrl, alt=employees[0].name)
